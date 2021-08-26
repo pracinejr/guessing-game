@@ -11,16 +11,22 @@ namespace GuessingGame
             List<int> Guesses = new List<int>();
             int secretNumber = 42;
 
-            Console.WriteLine("Guess the secret number");
+            while (Guesses.Count < 4 ) 
+            {
+            Console.WriteLine("Guess the secret number. ");
+            Console.Write($"Remaining guesses: ({4 - (Guesses.Count)})");
             string answer = Console.ReadLine().ToLower();
             int userNumGuess = int.Parse(answer);
             // Console.Write($"your guess was {userNumGuess}");
-            if (userNumGuess == secretNumber) 
+            if (secretNumber == userNumGuess) 
             {
                 Console.WriteLine("You guessed correctly!");
+                break;
             } else 
             {
+                Guesses.Add(userNumGuess);
                 Console.WriteLine("Wrong answer, sorry.");
+            }
             }
         }
     }
