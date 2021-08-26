@@ -27,7 +27,11 @@ namespace GuessingGame
             } else 
             {
                 Guesses.Add(userNumGuess);
-                Console.WriteLine("Wrong answer, sorry.");
+                if (secretNumber < userNumGuess) 
+                {
+                    Console.WriteLine("Your answer is too high and is incorrect, sorry.");
+                }
+                else  Console.WriteLine("Wrong answer is too low and is incorrect, sorry.");
             }
             }
         }
