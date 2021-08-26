@@ -9,7 +9,8 @@ namespace GuessingGame
         static void Main(string[] args)
         {
             List<int> Guesses = new List<int>();
-            int secretNumber = 42;
+            Random rnd = new Random();
+            int secretNumber = rnd.Next(1, 101);
 
             while (Guesses.Count < 4 ) 
             {
@@ -17,6 +18,7 @@ namespace GuessingGame
             Console.Write($"Remaining guesses: ({4 - (Guesses.Count)})");
             string answer = Console.ReadLine().ToLower();
             int userNumGuess = int.Parse(answer);
+            // Console.WriteLine($"{secretNumber}");
             // Console.Write($"your guess was {userNumGuess}");
             if (secretNumber == userNumGuess) 
             {
